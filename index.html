@@ -3350,6 +3350,16 @@ body::-webkit-scrollbar {
 #anchorage-map .leaflet-marker-shadow,
 #anchorage-map .leaflet-pane img { max-width: none !important; }
 #anchorage-map .leaflet-control-zoom a { box-sizing: content-box; }
+
+/* Cartografia oficial d'herbassars marins: sempre visible sota el mapa de fondejos */
+.official-seagrass-map{border-top:1px solid rgba(255,255,255,.12);padding:22px 22px 18px;background:rgba(4,25,35,.28)}
+.official-seagrass-heading{text-align:center;max-width:820px;margin:0 auto 16px}
+.official-seagrass-heading h5{font-family:Georgia,serif;font-size:21px;font-weight:400;color:#fff;margin:7px 0}
+.official-seagrass-heading p,.official-seagrass-note{font-size:12px;line-height:1.6;color:rgba(232,241,243,.68);margin:7px auto 0}
+.official-seagrass-frame{height:430px;border:1px solid rgba(225,177,58,.22);border-radius:10px;overflow:hidden;background:#102e3a}
+.official-seagrass-frame iframe{display:block;width:100%;height:100%;border:0}
+.official-seagrass-note{max-width:900px;text-align:center;margin:12px auto 0}
+@media(max-width:640px){.official-seagrass-map{padding:17px 12px 14px}.official-seagrass-frame{height:390px}.official-seagrass-heading h5{font-size:19px}}
 </style>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -5061,6 +5071,23 @@ body::-webkit-scrollbar {
                 <span class="anchorage-map-hint" data-i18n="anchorage_map_hint">Toca un punt per veure’n la protecció</span>
             </div>
             <div id="anchorage-map" data-i18n-attr="aria-label:anchorage_map_aria" aria-label="Mapa dels fondejos entre Platja d’Aro i Tossa de Mar"></div>
+            <section class="official-seagrass-map" aria-label="Cartografia oficial dels herbassars marins de Catalunya">
+                <div class="official-seagrass-heading">
+                    <span class="marine-label">CARTOGRAFIA OFICIAL · GENERALITAT DE CATALUNYA</span>
+                    <h5>Praderies marines i zones sensibles</h5>
+                    <p>Consulta la distribució cartografiada de Posidonia oceanica, Cymodocea nodosa i altres fanerògames marines. Aquesta capa és informativa i indicativa.</p>
+                </div>
+                <div class="official-seagrass-frame">
+                    <iframe
+                        title="Mapa oficial dels herbassars marins de Catalunya"
+                        src="https://www.google.com/maps/d/embed?mid=18WgsmikuaQhnTd5FDjZrQmvjZyim6LM&hl=ca&ll=41.75%2C3.0&z=12"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="official-seagrass-note">La cartografia de praderies no equival per si sola a una delimitació legal de totes les prohibicions de fondeig. Comprova també els abalisaments, camps de boies i normativa local.</p>
+            </section>
             <div class="anchorage-map-legend">
                 <span><i class="legend-dot legend-good"></i> <span data-i18n="anchorage_map_legend_good">Fondeig recomanat</span></span>
                 <span><i class="legend-dot legend-conditional"></i> <span data-i18n="anchorage_map_legend_conditional">Segons el vent</span></span>
